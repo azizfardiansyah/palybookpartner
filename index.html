@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook Marketing KRESA — Panduan Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & ROOT ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #080b12;
+  --bg2:       #0e1120;
+  --surface:   #141829;
+  --surface2:  #1c2138;
+  --border:    #252c45;
+  --border2:   #2e3760;
+  --purple:    #7c6ff7;
+  --purple-lt: #a89eff;
+  --purple-dk: #5447d6;
+  --teal:      #2dd4bf;
+  --teal-dk:   #0f9d8c;
+  --green:     #22c55e;
+  --yellow:    #fbbf24;
+  --red:       #f87171;
+  --orange:    #fb923c;
+  --blue:      #60a5fa;
+  --text:      #e8edf5;
+  --muted:     #8a97b0;
+  --dim:       #475569;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NOISE TEXTURE ───────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.1; }
+
+/* ─── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(8, 11, 18, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.3s;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 18px;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-badge {
+  font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+  background: rgba(124,111,247,0.15); border: 1px solid rgba(124,111,247,0.3);
+  color: var(--purple-lt); padding: 3px 10px; border-radius: 100px;
+  text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a {
+  font-size: 13px; color: var(--muted); text-decoration: none;
+  font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--purple); color: white !important;
+  padding: 8px 20px; border-radius: 100px; font-weight: 600 !important;
+  font-size: 12px !important; letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover { background: var(--purple-lt) !important; transform: translateY(-1px); }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg-orbs {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: 0.12;
+  animation: drift 12s ease-in-out infinite;
+}
+.orb-1 { width: 600px; height: 600px; background: var(--purple); top: -200px; left: -150px; animation-delay: 0s; }
+.orb-2 { width: 400px; height: 400px; background: var(--teal); top: 30%; right: -100px; animation-delay: -4s; }
+.orb-3 { width: 300px; height: 300px; background: var(--blue); bottom: -100px; left: 30%; animation-delay: -8s; }
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(124,111,247,0.1); border: 1px solid rgba(124,111,247,0.25);
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  color: var(--purple-lt); text-transform: uppercase;
+  animation: fadeUp 0.8s ease both;
+}
+.kicker-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 80px);
+  font-weight: 800; letter-spacing: -2px;
+  line-height: 1.0;
+  margin-bottom: 8px;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+.hero h1 .line-1 { display: block; color: var(--text); }
+.hero h1 .line-2 {
+  display: block;
+  background: linear-gradient(135deg, var(--purple-lt), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 18px); color: var(--muted);
+  max-width: 540px; margin: 20px auto 40px;
+  font-weight: 400; line-height: 1.7;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+.btn-primary {
+  background: var(--purple); color: white;
+  padding: 14px 32px; border-radius: 100px;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 0 40px rgba(124,111,247,0.3);
+}
+.btn-primary:hover { background: var(--purple-lt); transform: translateY(-2px); box-shadow: 0 8px 40px rgba(124,111,247,0.5); }
+.btn-outline {
+  background: transparent; color: var(--text);
+  padding: 14px 32px; border-radius: 100px;
+  font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px;
+  text-decoration: none; border: 1px solid var(--border2);
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: var(--purple); color: var(--purple-lt); }
+
+.hero-stats {
+  display: flex; gap: 48px; justify-content: center; margin-top: 64px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-lt), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
+}
+.stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+/* ─── SECTION BASE ───────────────────────────────────────── */
+section { position: relative; z-index: 1; }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+
+.section-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 14px;
+}
+.section-kicker::before {
+  content: ''; width: 20px; height: 2px; background: currentColor; border-radius: 1px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px;
+  margin-bottom: 16px; line-height: 1.1;
+}
+.section-sub { color: var(--muted); max-width: 560px; font-size: 15px; line-height: 1.7; }
+
+/* ─── WHAT'S INSIDE ──────────────────────────────────────── */
+#chapters { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.chapters-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px; margin-top: 56px;
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+.chapter-card {
+  background: var(--surface); padding: 28px;
+  transition: background 0.25s, transform 0.2s;
+  cursor: default; position: relative; overflow: hidden;
+}
+.chapter-card::before {
+  content: ''; position: absolute; inset: 0;
+  opacity: 0; transition: opacity 0.3s;
+}
+.chapter-card:hover { background: var(--surface2); }
+.chapter-card:hover::before { opacity: 1; }
+
+.chapter-num {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 16px; opacity: 0.5;
+}
+.chapter-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.chapter-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.chapter-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.chapter-tags { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+.ctag {
+  font-size: 10px; font-weight: 600; padding: 3px 10px;
+  border-radius: 100px; letter-spacing: 0.5px;
+}
+.ctag-p { background: rgba(124,111,247,0.12); color: var(--purple-lt); }
+.ctag-t { background: rgba(45,212,191,0.12); color: var(--teal); }
+.ctag-g { background: rgba(34,197,94,0.12); color: var(--green); }
+.ctag-y { background: rgba(251,191,36,0.12); color: var(--yellow); }
+.ctag-r { background: rgba(248,113,113,0.12); color: var(--red); }
+.ctag-b { background: rgba(96,165,250,0.12); color: var(--blue); }
+
+/* ─── PRODUCTS ───────────────────────────────────────────── */
+#products { background: var(--bg); }
+
+.products-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 56px;
+}
+.prod-card {
+  border-radius: 16px; padding: 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.prod-card:hover { transform: translateY(-4px); }
+.prod-card-blue  { background: rgba(96,165,250,0.06);  border: 1px solid rgba(96,165,250,0.2); }
+.prod-card-teal  { background: rgba(45,212,191,0.06);  border: 1px solid rgba(45,212,191,0.2); }
+.prod-card-yellow{ background: rgba(251,191,36,0.06);  border: 1px solid rgba(251,191,36,0.2); }
+.prod-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.prod-card-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 18px;
+}
+.pi-blue   { background: rgba(96,165,250,0.15); }
+.pi-teal   { background: rgba(45,212,191,0.15); }
+.pi-yellow { background: rgba(251,191,36,0.15); }
+.prod-akad { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.prod-name { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.prod-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+.prod-details { display: flex; flex-direction: column; gap: 8px; }
+.prod-row { display: flex; justify-content: space-between; align-items: center; font-size: 12px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.prod-row:last-child { border-bottom: none; }
+.prod-row-key { color: var(--muted); }
+.prod-row-val { font-weight: 600; font-size: 12px; }
+.c-blue { color: var(--blue); } .c-teal { color: var(--teal); } .c-yellow { color: var(--yellow); }
+.c-green { color: var(--green); } .c-orange { color: var(--orange); }
+
+/* ─── SOP FLOW ───────────────────────────────────────────── */
+#sop { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.sop-flow {
+  margin-top: 56px; display: flex; flex-direction: column; gap: 0;
+  max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.sop-step {
+  display: flex; gap: 20px; align-items: flex-start;
+  position: relative;
+}
+.sop-step::before {
+  content: ''; position: absolute;
+  left: 19px; top: 52px; bottom: -8px; width: 2px;
+  background: linear-gradient(to bottom, var(--border2), transparent);
+}
+.sop-step:last-child::before { display: none; }
+.sop-left { display: flex; flex-direction: column; align-items: center; gap: 0; flex-shrink: 0; }
+.sop-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 2px solid var(--border2); background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+  color: var(--muted); flex-shrink: 0;
+  transition: all 0.3s;
+}
+.sop-step:hover .sop-num {
+  border-color: var(--purple); color: var(--purple-lt);
+  background: rgba(124,111,247,0.1);
+}
+.sop-body {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px 20px; flex: 1; margin-bottom: 8px;
+  transition: border-color 0.25s;
+}
+.sop-step:hover .sop-body { border-color: var(--border2); }
+.sop-body-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.sop-icon { font-size: 18px; }
+.sop-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; }
+.sop-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.sop-tag {
+  display: inline-block; margin-top: 8px; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px; letter-spacing: 0.5px;
+}
+
+/* ─── SCRIPTS PREVIEW ────────────────────────────────────── */
+#scripts { background: var(--bg); }
+
+.scripts-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px;
+}
+.script-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+}
+.script-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.script-header {
+  padding: 14px 18px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.script-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.script-header-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.script-body { padding: 18px; }
+.script-label { font-size: 10px; color: var(--dim); margin-bottom: 8px; }
+.script-text {
+  font-size: 13px; color: var(--text); line-height: 1.7;
+  font-style: italic; position: relative; padding-left: 14px;
+}
+.script-text::before {
+  content: '"'; position: absolute; left: 0; top: -2px;
+  font-size: 24px; color: var(--border2); font-style: normal;
+  font-family: 'Syne', sans-serif; line-height: 1;
+}
+.script-tip { font-size: 11px; color: var(--teal); margin-top: 10px; display: flex; gap: 6px; align-items: flex-start; }
+
+/* ─── OBJECTION HANDLING ─────────────────────────────────── */
+#objections {
+  background: var(--bg2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+
+.objections-list {
+  display: flex; flex-direction: column; gap: 10px; margin-top: 56px;
+}
+.obj-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color 0.25s;
+  cursor: pointer;
+}
+.obj-card:hover { border-color: var(--border2); }
+.obj-card.open { border-color: var(--yellow); }
+.obj-header {
+  padding: 16px 20px; display: flex; justify-content: space-between;
+  align-items: center; gap: 12px;
+}
+.obj-q { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+.obj-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.obj-question { font-size: 14px; font-weight: 600; color: var(--text); }
+.obj-chevron {
+  color: var(--dim); font-size: 12px; transition: transform 0.25s; flex-shrink: 0;
+}
+.obj-card.open .obj-chevron { transform: rotate(180deg); }
+.obj-answer {
+  display: none; padding: 0 20px 16px 60px;
+  font-size: 13px; color: var(--muted); line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.obj-card.open .obj-answer { display: block; }
+.obj-tip { font-size: 12px; color: var(--teal); margin-top: 10px; font-style: italic; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+#faq { background: var(--bg); }
+
+.faq-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px;
+}
+.faq-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 24px;
+  transition: border-color 0.25s, transform 0.2s;
+  border-left: 3px solid var(--orange);
+}
+.faq-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+.faq-q { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--yellow); line-height: 1.4; }
+.faq-a { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.faq-tip { font-size: 11px; color: var(--teal); margin-top: 10px; }
+
+/* ─── KOMISI SECTION ─────────────────────────────────────── */
+#komisi {
+  background: var(--bg2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+
+.komisi-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: start; margin-top: 56px;
+}
+.komisi-table {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+}
+.kt-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.kt-row:last-child { border-bottom: none; }
+.kt-key { color: var(--muted); }
+.kt-val { font-weight: 600; }
+.kt-flex { color: var(--yellow); font-style: italic; font-weight: 700; }
+
+.tips-list { display: flex; flex-direction: column; gap: 12px; }
+.tip-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px;
+  display: flex; gap: 14px; align-items: flex-start;
+  transition: border-color 0.25s;
+}
+.tip-card:hover { border-color: var(--border2); }
+.tip-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.tip-content h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.tip-content p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* ─── CTA SECTION ────────────────────────────────────────── */
+#cta {
+  background: var(--bg);
+  padding: 120px 40px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-orb-1 {
+  position: absolute; width: 500px; height: 500px;
+  background: var(--purple); border-radius: 50%;
+  filter: blur(120px); opacity: 0.08;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+.cta-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  color: var(--green); text-transform: uppercase;
+}
+.cta-title {
+  font-family: 'Syne', sans-serif; font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.1;
+}
+.cta-sub { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 36px; }
+.cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta-url {
+  margin-top: 24px; font-size: 13px; color: var(--dim);
+}
+.cta-url span { color: var(--teal); font-weight: 600; }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 32px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; }
+.footer-note { font-size: 12px; color: var(--dim); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+/* ─── DIVIDER ────────────────────────────────────────────── */
+.larangan-list {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 10px; margin-top: 24px;
+}
+.larangan-item {
+  background: rgba(248,113,113,0.05); border: 1px solid rgba(248,113,113,0.15);
+  border-radius: 10px; padding: 12px 16px;
+  display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--text);
+}
+.larangan-item span:first-child { font-size: 16px; flex-shrink: 0; }
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* delay helpers */
+.d1 { transition-delay: 0.05s; } .d2 { transition-delay: 0.1s; }
+.d3 { transition-delay: 0.15s; } .d4 { transition-delay: 0.2s; }
+.d5 { transition-delay: 0.25s; } .d6 { transition-delay: 0.3s; }
+.d7 { transition-delay: 0.35s; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 14px 24px; }
+  .nav-links { display: none; }
+  .section-inner { padding: 72px 24px; }
+  .products-grid { grid-template-columns: 1fr; }
+  .scripts-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .komisi-grid { grid-template-columns: 1fr; }
+  .chapters-grid { grid-template-columns: 1fr; }
+  .larangan-list { grid-template-columns: 1fr; }
+  .hero { padding: 100px 24px 60px; }
+  .hero-stats { gap: 28px; }
+  #cta { padding: 80px 24px; }
+  footer { padding: 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { letter-spacing: -1px; }
+  .hero-stats { gap: 20px; }
+  .stat-num { font-size: 24px; }
+  .section-title { letter-spacing: -0.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">
+    🤝 <span>KRESA</span>
+    <span class="nav-badge">Partner</span>
+  </div>
+  <div class="nav-links">
+    <a href="#chapters">Isi Playbook</a>
+    <a href="#products">Produk</a>
+    <a href="#sop">SOP</a>
+    <a href="#objections">Objection</a>
+    <a href="https://kresa.online/" target="_blank" class="nav-cta">Daftar Sekarang →</a>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="hero-kicker">
+    <span class="kicker-dot"></span>
+    Playbook Marketing Resmi
+  </div>
+
+  <h1>
+    <span class="line-1">Panduan Lengkap</span>
+    <span class="line-2">Partner KRESA</span>
+  </h1>
+
+  <p class="hero-sub">
+    Dari nol sampai closing pertama. Script, SOP, objection handling, dan simulasi jawaban keberatan — semua dalam satu panduan.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#chapters" class="btn-primary">Lihat Isi Playbook ↓</a>
+    <a href="https://kresa.online/" target="_blank" class="btn-outline">Daftar Jadi Partner →</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Bab Lengkap</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Script Siap Pakai</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Simulasi Keberatan</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Produk Syariah</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WHAT'S INSIDE ─────────────────────────────────────── -->
+<section id="chapters">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-kicker">Isi Playbook</div>
+      <h2 class="section-title">7 Bab yang Bikin Kamu<br>Langsung Siap Closing</h2>
+      <p class="section-sub">Tidak perlu tebak-tebakan. Semua langkah, script, dan strategi sudah ada di sini.</p>
+    </div>
+
+    <div class="chapters-grid">
+      <div class="chapter-card reveal d1">
+        <div class="chapter-num">BAB 01</div>
+        <span class="chapter-icon">🛒</span>
+        <div class="chapter-title">Kenali Produkmu</div>
+        <div class="chapter-desc">Pahami 3 produk KRESA secara mendalam — cara kerja, ketentuan, dan siapa target nasabah idealnya.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-b">Murabahah</span>
+          <span class="ctag ctag-t">Dana Talang</span>
+          <span class="ctag ctag-y">Gadai Syariah</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d2">
+        <div class="chapter-num">BAB 02</div>
+        <span class="chapter-icon">📋</span>
+        <div class="chapter-title">SOP Kerja Partner</div>
+        <div class="chapter-desc">Alur kerja 7 langkah dari pendaftaran sampai komisi cair — beserta daftar larangan keras yang wajib dipatuhi.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-p">7 Langkah</span>
+          <span class="ctag ctag-r">Larangan</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d3">
+        <div class="chapter-num">BAB 03</div>
+        <span class="chapter-icon">🗣️</span>
+        <div class="chapter-title">Script Pembukaan</div>
+        <div class="chapter-desc">Script lengkap untuk WhatsApp, DM, telepon, dan tatap muka. Bukan hafalan kaku — ini kerangka yang natural.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-g">WA/DM</span>
+          <span class="ctag ctag-b">Tatap Muka</span>
+          <span class="ctag ctag-t">Follow Up</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d4">
+        <div class="chapter-num">BAB 04</div>
+        <span class="chapter-icon">🔒</span>
+        <div class="chapter-title">Flow Closing</div>
+        <div class="chapter-desc">7 step dari identifikasi kebutuhan sampai akad ditandatangani dan komisi mulai terhitung.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-g">Step by Step</span>
+          <span class="ctag ctag-y">Tips per Step</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d5">
+        <div class="chapter-num">BAB 05</div>
+        <span class="chapter-icon">❓</span>
+        <div class="chapter-title">FAQ Nasabah</div>
+        <div class="chapter-desc">6 pertanyaan paling sering muncul dari calon nasabah — beserta jawaban siap pakai dan tips konteks.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-p">Siap Pakai</span>
+          <span class="ctag ctag-t">Tips Konteks</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d6">
+        <div class="chapter-num">BAB 06</div>
+        <span class="chapter-icon">🛡️</span>
+        <div class="chapter-title">Objection Handling</div>
+        <div class="chapter-desc">Simulasi 10 keberatan paling umum lengkap dengan strategi jawab yang tepat, empati, dan efektif.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-r">10 Keberatan</span>
+          <span class="ctag ctag-g">Strategi Jawab</span>
+        </div>
+      </div>
+
+      <div class="chapter-card reveal d7" style="grid-column: 1 / -1;">
+        <div class="chapter-num">BAB 07</div>
+        <span class="chapter-icon">🚀</span>
+        <div class="chapter-title">Tips & Target Harian</div>
+        <div class="chapter-desc">Mindset partner sukses, jadwal aktivitas harian yang direkomendasikan, dan cara jaga konsistensi agar komisi terus bertambah.</div>
+        <div class="chapter-tags">
+          <span class="ctag ctag-g">Mindset</span>
+          <span class="ctag ctag-y">Jadwal Harian</span>
+          <span class="ctag ctag-p">Target Komisi</span>
+          <span class="ctag ctag-t">Konsistensi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PRODUCTS ───────────────────────────────────────────── -->
+<section id="products">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-kicker">Produk KRESA</div>
+      <h2 class="section-title">3 Produk Syariah yang<br>Wajib Kamu Kuasai</h2>
+      <p class="section-sub">Semakin kamu pahami produknya, semakin mudah kamu jelaskan ke nasabah dan semakin tinggi closing rate-mu.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="prod-card prod-card-blue reveal d1">
+        <div class="prod-card-icon pi-blue">🛒</div>
+        <div class="prod-akad c-blue">Akad Murabahah</div>
+        <div class="prod-name">Jual Beli</div>
+        <div class="prod-desc">Pembiayaan barang dengan sistem jual beli syariah. Owner beli barang atas permintaan nasabah, nasabah angsur sesuai harga yang disepakati di awal.</div>
+        <div class="prod-details">
+          <div class="prod-row"><span class="prod-row-key">Tenor</span><span class="prod-row-val c-blue">1 – 24 bulan</span></div>
+          <div class="prod-row"><span class="prod-row-key">Pembayaran</span><span class="prod-row-val c-green">Cicilan tetap</span></div>
+          <div class="prod-row"><span class="prod-row-key">Denda telat</span><span class="prod-row-val c-orange">Rp 2.500/hari &gt; 3 hari</span></div>
+          <div class="prod-row"><span class="prod-row-key">Dana denda</span><span class="prod-row-val c-teal">Untuk sosial</span></div>
+          <div class="prod-row"><span class="prod-row-key">Sengketa</span><span class="prod-row-val">Musyawarah → Basyarnas</span></div>
+        </div>
+      </div>
+
+      <div class="prod-card prod-card-teal reveal d2">
+        <div class="prod-card-icon pi-teal">💵</div>
+        <div class="prod-akad c-teal">Akad Wakalah bil Ujrah</div>
+        <div class="prod-name">Dana Talang</div>
+        <div class="prod-desc">Owner bayarkan kebutuhan nasabah terlebih dahulu, nasabah mengembalikan dana talangan beserta ujrah (upah jasa) yang disepakati.</div>
+        <div class="prod-details">
+          <div class="prod-row"><span class="prod-row-key">Dana kembali</span><span class="prod-row-val c-green">Nominal sama</span></div>
+          <div class="prod-row"><span class="prod-row-key">Ujrah</span><span class="prod-row-val c-teal">Berdiri sendiri, bukan bunga</span></div>
+          <div class="prod-row"><span class="prod-row-key">Denda telat</span><span class="prod-row-val c-orange">Rp 2.500/hari &gt; 3 hari</span></div>
+          <div class="prod-row"><span class="prod-row-key">Dana denda</span><span class="prod-row-val c-teal">Untuk sosial</span></div>
+          <div class="prod-row"><span class="prod-row-key">Sengketa</span><span class="prod-row-val">Musyawarah → Basyarnas</span></div>
+        </div>
+      </div>
+
+      <div class="prod-card prod-card-yellow reveal d3">
+        <div class="prod-card-icon pi-yellow">💎</div>
+        <div class="prod-akad c-yellow">Akad Qardh + Rahn + Ujrah</div>
+        <div class="prod-name">Gadai Syariah</div>
+        <div class="prod-desc">Pinjaman dengan jaminan barang berharga. Tanpa bunga, biaya yang ada hanya ujrah penjagaan barang — bukan riba.</div>
+        <div class="prod-details">
+          <div class="prod-row"><span class="prod-row-key">3 akad</span><span class="prod-row-val c-yellow">Qardh + Rahn + Ujrah</span></div>
+          <div class="prod-row"><span class="prod-row-key">Bunga</span><span class="prod-row-val c-green">Tidak ada</span></div>
+          <div class="prod-row"><span class="prod-row-key">Barang</span><span class="prod-row-val c-teal">Tetap milik nasabah</span></div>
+          <div class="prod-row"><span class="prod-row-key">Denda telat</span><span class="prod-row-val c-orange">Rp 2.500/hari &gt; 3 hari</span></div>
+          <div class="prod-row"><span class="prod-row-key">Sengketa</span><span class="prod-row-val">Musyawarah → Basyarnas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SOP FLOW ────────────────────────────────────────────── -->
+<section id="sop">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <div class="reveal">
+          <div class="section-kicker">SOP Partner</div>
+          <h2 class="section-title">7 Langkah dari Prospek ke Komisi</h2>
+          <p class="section-sub">Ikuti alur ini setiap kali kamu handle calon nasabah baru. Konsisten = komisi terus cair.</p>
+        </div>
+
+        <div style="margin-top:32px;" class="reveal d2">
+          <div class="section-kicker" style="color:var(--red);">Yang Dilarang Keras</div>
+          <div class="larangan-list">
+            <div class="larangan-item"><span>🚫</span> Menerima uang nasabah dalam kondisi apapun</div>
+            <div class="larangan-item"><span>⛔</span> Negosiasi kontrak nasabah sendiri</div>
+            <div class="larangan-item"><span>❌</span> Mengancam atau intimidasi nasabah macet</div>
+            <div class="larangan-item"><span>🔇</span> Sebarkan data nasabah ke pihak luar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sop-flow">
+        <div class="sop-step reveal d1">
+          <div class="sop-left"><div class="sop-num">01</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">📋</span><span class="sop-title">Daftar & Tanda Tangani Kontrak</span></div>
+            <div class="sop-desc">Daftar via kresa.online → Owner review → Kontrak wajib ditandatangani sebelum aktif.</div>
+            <span class="sop-tag ctag ctag-p">Kontrak Wajib</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d2">
+          <div class="sop-left"><div class="sop-num">02</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">📣</span><span class="sop-title">Cari & Dekati Prospek</span></div>
+            <div class="sop-desc">Jaringan pribadi, sosial media, atau komunitas lokal. Aktif setiap hari.</div>
+            <span class="sop-tag ctag ctag-t">Aktif Setiap Hari</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d3">
+          <div class="sop-left"><div class="sop-num">03</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">🗣️</span><span class="sop-title">Presentasi Produk</span></div>
+            <div class="sop-desc">Jujur, transparan, sesuai informasi resmi. Gunakan script yang ada di bab 03.</div>
+            <span class="sop-tag ctag ctag-y">Gunakan Script</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d4">
+          <div class="sop-left"><div class="sop-num">04</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">🔗</span><span class="sop-title">Referral & Onboarding Nasabah</span></div>
+            <div class="sop-desc">Bantu nasabah daftar di aplikasi. Pastikan kode referral tercatat agar komisi terhitung.</div>
+            <span class="sop-tag ctag ctag-g">Referral Wajib Tercatat</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d5">
+          <div class="sop-left"><div class="sop-num">05</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">⏳</span><span class="sop-title">Verifikasi oleh Owner</span></div>
+            <div class="sop-desc">Kamu tidak terlibat di proses internal. Owner putuskan dalam maks. 3 hari kerja.</div>
+            <span class="sop-tag ctag ctag-y">Maks. 3 Hari Kerja</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d6">
+          <div class="sop-left"><div class="sop-num">06</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">🔔</span><span class="sop-title">Ingatkan Jadwal Bayar</span></div>
+            <div class="sop-desc">Bantu ingatkan nasabah menjelang jatuh tempo cicilan. Opsional tapi sangat dianjurkan.</div>
+            <span class="sop-tag ctag ctag-b">Dianjurkan</span>
+          </div>
+        </div>
+        <div class="sop-step reveal d7">
+          <div class="sop-left"><div class="sop-num">07</div></div>
+          <div class="sop-body">
+            <div class="sop-body-top"><span class="sop-icon">💰</span><span class="sop-title">Terima Komisi / Margin Sharing</span></div>
+            <div class="sop-desc">Komisi dihitung otomatis di aplikasi. Dibayar sesuai kontrak, paling lambat tgl 1 bulan berikutnya.</div>
+            <span class="sop-tag ctag ctag-g">Otomatis di App</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+<section id="scripts">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-kicker">Script Pembukaan</div>
+      <h2 class="section-title">Kata-kata yang Bikin<br>Nasabah Mau Dengerin</h2>
+      <p class="section-sub">Bukan hafalan kaku — ini kerangka. Sesuaikan dengan gaya bicaramu, tetap natural dan autentik.</p>
+    </div>
+
+    <div class="scripts-grid">
+      <div class="script-card reveal d1">
+        <div class="script-header">
+          <div class="script-dot" style="background:var(--green)"></div>
+          <span class="script-header-title">WA / DM — Pertama Kali Kontak</span>
+        </div>
+        <div class="script-body">
+          <div class="script-label">Pembukaan hangat</div>
+          <div class="script-text">Halo Kak [Nama]! Saya [Nama], partner dari KRESA — layanan pembiayaan syariah. Boleh saya cerita sedikit soal produk kami yang mungkin bisa bantu Kakak?</div>
+          <div class="script-tip">💡 Tujuannya membuka percakapan, bukan langsung closing</div>
+        </div>
+      </div>
+
+      <div class="script-card reveal d2">
+        <div class="script-header">
+          <div class="script-dot" style="background:var(--orange)"></div>
+          <span class="script-header-title">Follow Up — Tidak Ada Respons</span>
+        </div>
+        <div class="script-body">
+          <div class="script-label">Setelah 1 hari tidak dibalas</div>
+          <div class="script-text">Kak [Nama], mungkin kemarin lagi sibuk ya 😊 Saya mau share info singkat — KRESA bisa bantu kalau butuh barang dengan cicilan atau dana mendesak, tanpa bunga, berbasis syariah. Kapan ada waktu sebentar?</div>
+          <div class="script-tip">💡 Jangan follow up lebih dari 3 kali tanpa respons</div>
+        </div>
+      </div>
+
+      <div class="script-card reveal d3">
+        <div class="script-header">
+          <div class="script-dot" style="background:var(--blue)"></div>
+          <span class="script-header-title">Tatap Muka / Telepon</span>
+        </div>
+        <div class="script-body">
+          <div class="script-label">Pembukaan tatap muka</div>
+          <div class="script-text">Hai Kak, saya [Nama] — partner dari KRESA, layanan keuangan syariah dari Arini. Boleh saya minta 3 menit untuk cerita soal produk kami?</div>
+          <div class="script-tip">💡 Spesifik "3 menit" — terasa lebih mudah untuk disetujui</div>
+        </div>
+      </div>
+
+      <div class="script-card reveal d4">
+        <div class="script-header">
+          <div class="script-dot" style="background:var(--yellow)"></div>
+          <span class="script-header-title">Setelah Nasabah Tertarik</span>
+        </div>
+        <div class="script-body">
+          <div class="script-label">Jika butuh barang</div>
+          <div class="script-text">Oke! Jadi di KRESA sistemnya jual beli syariah, Kak. Kakak kasih tahu barang yang mau dibeli, kami yang belikan, lalu Kakak cicil sesuai tenor yang disepakati. Harganya transparan dari awal, tidak ada biaya tersembunyi.</div>
+          <div class="script-tip">💡 Tekankan "transparan dari awal" — ini pembeda utama</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── OBJECTION HANDLING ─────────────────────────────────── -->
+<section id="objections">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-kicker">Objection Handling</div>
+      <h2 class="section-title">Keberatan Bukan Penolakan —<br>Itu Tanda Mereka Mempertimbangkan</h2>
+      <p class="section-sub">10 keberatan paling umum, lengkap dengan strategi jawab. Klik untuk lihat jawabannya.</p>
+    </div>
+
+    <div class="objections-list">
+      <div class="obj-card reveal d1" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Ini halal nggak? Kan ada cicilannya, berarti ada bunga dong?"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Halal, Kak. Sistem kami berbeda dari bank konvensional. Untuk jual beli, kami pakai akad Murabahah — kami beli barangnya, lalu jual ke Kakak dengan harga yang sudah disepakati di awal. Margin itu bukan bunga, karena harganya fix dari hari pertama, tidak bertambah kalau telat.
+          <div class="obj-tip">💡 Tekankan "harga fix dari awal" — ini pembeda utama dari bunga</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d2" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Saya pikir-pikir dulu"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Tentu, Kak! Ini keputusan penting dan tidak perlu buru-buru. Boleh saya tanyakan — ada bagian tertentu yang masih belum jelas atau yang bikin ragu? Mungkin bisa saya bantu jelaskan lebih dulu.
+          <div class="obj-tip">💡 "Pikir-pikir" seringkali ada pertanyaan spesifik di baliknya — gali lebih dalam</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d3" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Cicilan saya masih banyak, nggak sanggup tambah lagi"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Iya, Kak, masuk akal. Mungkin sekarang memang belum saat yang tepat. Tapi kalau nanti kondisinya sudah lebih lapang dan ada kebutuhan lagi, KRESA siap bantu. Boleh saya simpan kontaknya?
+          <div class="obj-tip">💡 Jangan paksa. Jadikan prospek jangka panjang</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d4" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Kenapa nggak ke bank aja yang lebih terpercaya?"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Pilihan bagus juga, Kak. Bedanya, KRESA itu aksesnya lebih mudah, prosesnya lebih personal, dan akadnya berbasis syariah. Kalau Kakak sebelumnya pernah ditolak bank atau prosesnya ribet, KRESA bisa jadi alternatif yang lebih fleksibel.
+          <div class="obj-tip">💡 Jangan jelek-jelekin bank. Posisikan KRESA sebagai alternatif, bukan saingan</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d5" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Ini MLM atau arisan ya?"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Bukan, Kak haha. KRESA itu platform pembiayaan syariah — owner menyediakan modal, kita (partner) membantu pemasaran dan mendapat margin sharing dari setiap transaksi yang berhasil. Tidak ada rekrut-merekrut.
+          <div class="obj-tip">💡 Jawab dengan santai dan langsung — jangan defensif</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d6" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Saya nggak ngerti syariah, ribet kayaknya"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Justru sebaliknya, Kak! Intinya cuma dua: harga jelas dari awal, dan tidak ada bunga berbunga. Lebih simple dari kredit konvensional sebenarnya. Sisanya kita yang urus.
+          <div class="obj-tip">💡 Sederhanakan — hindari istilah Arab yang membingungkan saat awal pendekatan</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal d7" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Saya nggak percaya, takut ditipu"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Saya sangat mengerti perasaan itu, Kak. Makanya di KRESA semua akad didokumentasikan dalam kontrak resmi PDF digital. Kita bisa lihat bersama kontraknya sebelum Kakak memutuskan. Tidak ada yang disembunyikan.
+          <div class="obj-tip">💡 Tawarkan untuk review kontrak dulu sebelum pendaftaran</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Boleh nggak bayar ke kamu langsung saja biar gampang?"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Maaf Kak, itu tidak bisa ya. Semua pembayaran harus langsung ke rekening owner/KRESA yang tertera di akad. Saya tidak diperbolehkan menerima uang dari nasabah — ini untuk keamanan Kakak juga.
+          <div class="obj-tip">💡 Tegas tapi sopan. Ini larangan keras dalam kontrak</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Denda Rp 2.500 itu kecil, berarti nggak masalah kalau telat?"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Secara nominal memang kecil, Kak. Tapi ini soal komitmen dan akad yang sudah disepakati bersama. Bayar tepat waktu juga menjaga rekam jejak Kakak supaya pengajuan ke depannya lebih mudah diproses.
+          <div class="obj-tip">💡 Arahkan ke nilai kepercayaan, bukan sekadar angka denda</div>
+        </div>
+      </div>
+
+      <div class="obj-card reveal" onclick="toggleObj(this)">
+        <div class="obj-header">
+          <div class="obj-q">
+            <div class="obj-icon">❓</div>
+            <span class="obj-question">"Kok margin sharingnya segitu? Kecil banget"</span>
+          </div>
+          <span class="obj-chevron">▾</span>
+        </div>
+        <div class="obj-answer">
+          Margin sharingnya memang fleksibel dan ditetapkan sesuai kesepakatan kontrak. Semakin aktif dan semakin banyak nasabah yang berhasil, potensi komisinya juga bertambah. Partner yang konsisten biasanya dapat komisi lebih baik dan perpanjangan kontrak.
+          <div class="obj-tip">💡 Fokus pada potensi jangka panjang, bukan angka satu transaksi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── KOMISI ──────────────────────────────────────────────── -->
+<section id="komisi">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-kicker">Komisi & Tips</div>
+      <h2 class="section-title">Skema Komisi & Cara<br>Konsisten Dapat Lebih</h2>
+    </div>
+
+    <div class="komisi-grid">
+      <div class="reveal d1">
+        <div class="section-kicker" style="margin-bottom:16px;">Skema Margin Sharing</div>
+        <div class="komisi-table">
+          <div class="kt-row"><span class="kt-key">Besaran</span><span class="kt-flex">Sesuai kesepakatan kontrak (%)</span></div>
+          <div class="kt-row"><span class="kt-key">Dasar Hitung</span><span class="kt-val">% dari keuntungan bersih per transaksi</span></div>
+          <div class="kt-row"><span class="kt-key">Berlaku untuk</span><span class="kt-val" style="color:var(--teal)">Murabahah · Dana Talang · Gadai</span></div>
+          <div class="kt-row"><span class="kt-key">Jadwal Bayar</span><span class="kt-val">Maks. tgl 1 bulan berikutnya</span></div>
+          <div class="kt-row"><span class="kt-key">Risiko Macet</span><span class="kt-val" style="color:var(--yellow)">50% Partner : 50% Pemodal</span></div>
+          <div class="kt-row"><span class="kt-key">Jika Nasabah Macet</span><span class="kt-val" style="color:var(--orange)">Ditangguhkan hingga lunas</span></div>
+          <div class="kt-row"><span class="kt-key">Perpanjangan Kontrak</span><span class="kt-val" style="color:var(--green)">Otomatis jika performa baik</span></div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <div class="section-kicker" style="margin-bottom:16px;">Mindset & Tips Harian</div>
+        <div class="tips-list">
+          <div class="tip-card">
+            <span class="tip-icon">🎯</span>
+            <div class="tip-content">
+              <h4>Fokus pada Solusi, Bukan Jualan</h4>
+              <p>Nasabah beli karena merasa terbantu, bukan karena dipaksa. Gali kebutuhan dulu.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">📊</span>
+            <div class="tip-content">
+              <h4>Konsistensi &gt; Intensitas Sesaat</h4>
+              <p>3 prospek per hari lebih baik dari 30 prospek sehari lalu berhenti seminggu.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">💬</span>
+            <div class="tip-content">
+              <h4>Follow Up adalah Kunci</h4>
+              <p>Sebagian besar closing terjadi di follow up ke-3 hingga ke-7. Jangan menyerah setelah satu kali.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <span class="tip-icon">🤝</span>
+            <div class="tip-content">
+              <h4>Bangun Kepercayaan Dulu</h4>
+              <p>Relasi jangka panjang lebih berharga dari satu transaksi. Nasabah yang percaya akan referral ke orang lain.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section id="cta">
+  <div class="cta-orb-1"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-badge">
+      <span class="kicker-dot"></span>
+      Bergabung Sekarang
+    </div>
+    <div class="cta-title">Siap Mulai<br>Closing Pertamamu?</div>
+    <p class="cta-sub">Daftar sebagai Partner KRESA, tandatangani kontrak, dan mulai jalankan SOP ini hari ini. Komisi menanti setiap transaksi yang berhasil.</p>
+    <div class="cta-actions">
+      <a href="https://kresa.online/" target="_blank" class="btn-primary" style="font-size:15px;padding:16px 36px;">Daftar Jadi Partner →</a>
+    </div>
+    <div class="cta-url">atau kunjungi <span>kresa.online</span></div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">🤝 KRESA</div>
+  <div class="footer-note">Dokumen ini bersifat internal — hanya untuk Partner KRESA · 2025</div>
+  <div class="footer-links">
+    <a href="https://kresa.online/" target="_blank">kresa.online</a>
+    <a href="#chapters">Playbook</a>
+    <a href="#sop">SOP</a>
+  </div>
+</footer>
+
+
+<script>
+// ── SCROLL REVEAL ──────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => revealObs.observe(el));
+
+// ── OBJECTION ACCORDION ────────────────────────────────────
+function toggleObj(card) {
+  const isOpen = card.classList.contains('open');
+  // close all
+  document.querySelectorAll('.obj-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+
+// ── NAVBAR SCROLL EFFECT ───────────────────────────────────
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(8,11,18,0.95)';
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+  } else {
+    nav.style.background = 'rgba(8,11,18,0.7)';
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.04)';
+  }
+});
+
+// ── SMOOTH ANCHOR SCROLL ───────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ── NUMBER COUNT-UP ANIMATION (HERO STATS) ─────────────────
+function countUp(el, to, suffix='', duration=1200) {
+  let start = 0;
+  const step = to / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= to) { el.textContent = to + suffix; clearInterval(timer); return; }
+    el.textContent = Math.floor(start) + suffix;
+  }, 16);
+}
+
+const statNums = document.querySelectorAll('.stat-num');
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const text = el.textContent;
+      const num = parseInt(text);
+      const suffix = text.replace(num.toString(), '');
+      countUp(el, num, suffix);
+      statsObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNums.forEach(el => statsObs.observe(el));
+</script>
+
+</body>
+</html>
